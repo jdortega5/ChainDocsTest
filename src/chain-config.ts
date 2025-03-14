@@ -1,7 +1,7 @@
 // chain-config.ts
 export const chainConfig = {
-    name:'chainName',
-    chainID: 'chainID',
-    description: '{ChainDescription}',
+    name:'{chainName}',
+    chainID: '{chainId}',
+    description: '{chainDescription}',
   };
   
