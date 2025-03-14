@@ -20,7 +20,7 @@ jobs:
       - name: Checkout Forked Repo
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.ACTIONS_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Replace Variables
         run: |
