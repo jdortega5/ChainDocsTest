@@ -1,6 +1,6 @@
 # Faucet
 
-The thirdweb Faucet provides free testnet tokens on the {chainName} - one claim per 24 hours.
+The thirdweb Faucet provides free testnet tokens on the joe chain - one claim per 24 hours.
 
 ## Need extra help?
 
