@@ -1,0 +1,38 @@
+name: Update Chain Variables
+
+on:
+  workflow_dispatch:
+    inputs:
+      chainName:
+        description: 'Name of the chain (e.g., "Cosmos Hub")'
+        required: true
+      chainId:
+        description: 'Chain ID (e.g., "cosmoshub-4")'
+        required: true
+      chainDescription:
+        description: 'Description of the chain'
+        required: true
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Forked Repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ACTIONS_PAT }}
+
+      - name: Replace Variables
+        run: |
+          find . -type f \( -name "*.md" -o -name "*.ts" \) -exec sed -i \
+            -e "s/{chainName}/${{ github.event.inputs.chainName }}/g" \
+            -e "s/{chainId}/${{ github.event.inputs.chainId }}/g" \
+            -e "s/{chainDescription}/${{ github.event.inputs.chainDescription }}/g" {} \;
+
+      - name: Commit Changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add .
+          git commit -m "Update chain variables with user input"
+          git push
