@@ -1,7 +1,7 @@
 // chain-config.ts
 export const chainConfig = {
-    name:'{chainName}',
-    chainID: '{chainId}',
-    description: '{chainDescription}',
+    name:'Bam Chain',
+    chainID: '123456789',
+    description: 'Monk descirption of the cahin. ',
   };
   
