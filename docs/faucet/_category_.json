@@ -1,0 +1,8 @@
+{
+  "label": "Testnet Funds",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Get funds to start building quickly."
+  }
+}
